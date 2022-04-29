@@ -1,18 +1,26 @@
-import React from 'react'
-import Slide from './Slide'
+import React, { useEffect } from 'react'
+import { useSlider } from '../../hooks/sliderHook'
 
-const Slider = () => {
-  const slides = [
-    { id: 1, name: 'firstSlide' },
-    { id: 2, name: 'secondSlide' },
-    { id: 3, name: 'thirdSlide' },
-  ]
+const Slider = ({ children, width, storeState, decIndex, incIndex }) => {
+  const { slideIndex, touchEnd, touchMove, touchStart } = useSlider(
+    children.length,
+    storeState,
+    { decIndex, incIndex }
+  )
 
   return (
-    <div className='slider_wrapper'>
-      {slides.map((slide) => (
-        <Slide key={slide.id} type={slide.name} />
-      ))}
+    <div className='slider_container'>
+      <div
+        className='slider_wrapper'
+        style={{
+          transform: `translateX(-${slideIndex * width}px)`,
+          width: `${children.length * width}px`,
+        }}
+        onTouchStart={(e) => touchStart(e)}
+        onTouchMove={(e) => touchMove(e)}
+        onTouchEnd={(e) => touchEnd(e)}>
+        {children}
+      </div>
     </div>
   )
 }

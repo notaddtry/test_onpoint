@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <footer>
-      <h3>footer</h3>
+      <img src={`${process.env.PUBLIC_URL}/assets/images/footer.svg`} alt='' />
     </footer>
   )
 }

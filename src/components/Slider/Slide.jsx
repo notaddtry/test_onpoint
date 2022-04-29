@@ -3,10 +3,10 @@ import Homepage from './slides/HomeSlide'
 import Secondpage from './slides/SecondSlide'
 import Thirdpage from './slides/ThirdSlide'
 
-const Slide = (props) => {
-  const { type } = props
-
-  return (
+const Slide = ({ children, type }) => {
+  return children ? (
+    <>{children}</>
+  ) : (
     <div className='slider_item'>
       {type === 'firstSlide' ? (
         <Homepage />
