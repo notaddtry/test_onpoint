@@ -3,7 +3,6 @@ import Footer from './components/layout/Footer'
 import Header from './components/layout/Header'
 import Slide from './components/Slider/Slide'
 import Slider from './components/Slider/Slider'
-import Homepage from './components/Slider/slides/HomeSlide'
 import { useWindowResize } from './hooks/sliderHook'
 import { decIndex, incIndex } from './store/slices/sliderSlice'
 
@@ -31,9 +30,10 @@ function App() {
           width={width}
           decIndex={decIndex}
           incIndex={incIndex}
-          storeState={'slider'}>
+          storeState={'slider'}
+          stylePrefix=''>
           {SLIDES.map((slide) => (
-            <Slide key={slide.id} type={slide.name}></Slide>
+            <Slide key={slide.id} type={slide.name} />
           ))}
         </Slider>
         <Footer />

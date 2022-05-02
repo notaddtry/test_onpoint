@@ -1,13 +1,15 @@
 import React from 'react'
-import Homepage from './slides/HomeSlide'
-import Secondpage from './slides/SecondSlide'
-import Thirdpage from './slides/ThirdSlide'
+import Homepage from 'components/slides/HomeSlide'
+import Secondpage from 'components/slides/SecondSlide'
+import Thirdpage from 'components/slides/ThirdSlide'
+
+import styles from './slider.module.scss'
 
 const Slide = ({ children, type }) => {
   return children ? (
-    <>{children}</>
+    <div className={styles.slider_children_item}>{children}</div>
   ) : (
-    <div className='slider_item'>
+    <div className={styles.slider_item}>
       {type === 'firstSlide' ? (
         <Homepage />
       ) : type === 'secondSlide' ? (

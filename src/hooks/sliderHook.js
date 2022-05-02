@@ -11,9 +11,11 @@ export const useSlider = (childrenCount, storeState, { ...dispatchEvents }) => {
   let endX = 0
 
   const touchStart = (event) => {
+    event.stopPropagation()
     x1 = event.touches[0].clientX
   }
   const touchMove = (event) => {
+    event.stopPropagation()
     x2 = event.touches[0].clientX
   }
   const touchEnd = () => {

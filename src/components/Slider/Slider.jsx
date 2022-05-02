@@ -1,17 +1,29 @@
 import React, { useEffect } from 'react'
 import { useSlider } from '../../hooks/sliderHook'
 
-const Slider = ({ children, width, storeState, decIndex, incIndex }) => {
+import styles from './slider.module.scss'
+
+const Slider = ({
+  children,
+  width,
+  storeState,
+  decIndex,
+  incIndex,
+  stylePrefix,
+}) => {
   const { slideIndex, touchEnd, touchMove, touchStart } = useSlider(
     children.length,
     storeState,
     { decIndex, incIndex }
   )
 
+  // const styleContainer  = style + 'slider_container'
+  // const style = 'popup'
+
   return (
-    <div className='slider_container'>
+    <div className={styles[stylePrefix + 'slider_container']}>
       <div
-        className='slider_wrapper'
+        className={styles[stylePrefix + 'slider_wrapper']}
         style={{
           transform: `translateX(-${slideIndex * width}px)`,
           width: `${children.length * width}px`,
