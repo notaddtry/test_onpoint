@@ -5,9 +5,16 @@ import Thirdpage from 'components/slides/ThirdSlide'
 
 import styles from './slider.module.scss'
 
-const Slide = ({ children, type }) => {
+const Slide = ({ children, type, id, activeSlide }) => {
   return children ? (
-    <div className={styles.slider_children_item}>{children}</div>
+    <div
+      className={
+        id === activeSlide
+          ? styles.slider_children_item_active
+          : styles.slider_children_item
+      }>
+      {children}
+    </div>
   ) : (
     <div className={styles.slider_item}>
       {type === 'firstSlide' ? (

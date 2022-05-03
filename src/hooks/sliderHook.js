@@ -1,6 +1,5 @@
 import { useLayoutEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decIndex, incIndex } from '../store/slices/sliderSlice'
 
 export const useSlider = (childrenCount, storeState, { ...dispatchEvents }) => {
   const dispatch = useDispatch()
@@ -9,6 +8,7 @@ export const useSlider = (childrenCount, storeState, { ...dispatchEvents }) => {
   let x1 = 0
   let x2 = 0
   let endX = 0
+  const sliderLength = childrenCount - 1
 
   const touchStart = (event) => {
     event.stopPropagation()
@@ -19,7 +19,6 @@ export const useSlider = (childrenCount, storeState, { ...dispatchEvents }) => {
     x2 = event.touches[0].clientX
   }
   const touchEnd = () => {
-    const sliderLength = childrenCount - 1
     endX = x2 - x1
     if (x2) {
       if (endX <= -100) {
@@ -30,7 +29,25 @@ export const useSlider = (childrenCount, storeState, { ...dispatchEvents }) => {
     }
   }
 
-  return { slideIndex, touchStart, touchMove, touchEnd }
+  const goNextSlide = () => {
+    if (slideIndex < sliderLength) dispatch(dispatchEvents.incIndex())
+  }
+  const goPrevSlide = () => {
+    if (slideIndex > 0) dispatch(dispatchEvents.decIndex())
+  }
+  const goIndexSlide = (id) => {
+    dispatch(dispatchEvents.goToSlide(id))
+  }
+
+  return {
+    slideIndex,
+    touchStart,
+    touchMove,
+    touchEnd,
+    goNextSlide,
+    goPrevSlide,
+    goIndexSlide,
+  }
 }
 
 export const useWindowResize = (queryElem) => {

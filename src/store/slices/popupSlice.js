@@ -14,9 +14,15 @@ const popupSlice = createSlice({
     decIndex(state) {
       state.index--
     },
+    goHomeSlide(state) {
+      state.index = 0
+    },
+    goToSlide(state, action) {
+      state.index = action.payload
+    },
   },
 })
 
-export const { incIndex, decIndex } = popupSlice.actions
+export const { incIndex, decIndex, goHomeSlide, goToSlide } = popupSlice.actions
 
 export default popupSlice.reducer
