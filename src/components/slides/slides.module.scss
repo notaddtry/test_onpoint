@@ -1,3 +1,28 @@
+.homeslide_wrapper {
+  margin: 330px auto 450px;
+  text-transform: uppercase;
+  height: 760px;
+
+  & > span {
+  }
+
+  .homeslide_text {
+    font-family: 'Gilroy';
+    font-weight: 300;
+    line-height: 1;
+    font-size: 4rem;
+    max-width: 100%;
+    letter-spacing: 12px;
+
+    .homeslide_text_bold {
+      font-weight: 900;
+    }
+    .homeslide_btn {
+      margin-left: 100px;
+    }
+  }
+}
+
 .thirdslide_content {
   width: 500px;
   display: flex;

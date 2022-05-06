@@ -4,7 +4,7 @@ import styles from './slides.module.scss'
 
 const Secondpage = () => {
   return (
-    <div className={styles.secondslide_wrapper}>
+    <div className={`${styles.secondslide_wrapper} container`}>
       <span className={styles.secondslide_hello}>текст сообщения</span>
       <div className={styles.secondslide_body}>
         <span className={styles.secondslide_text}>

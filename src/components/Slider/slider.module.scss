@@ -5,17 +5,20 @@
 .slider_container {
   flex: 1 1 100%;
   align-self: center;
-  overflow: hidden;
+  overflow-x: hidden;
+  min-height: 90vh;
 }
 
 .slider_wrapper {
+  overflow-y: scroll;
+  overflow-x: hidden;
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   display: flex;
-  height: 100vh;
   transition: transform 0.5s ease;
   background: url('../../../public/assets/images/bg.jpg') center center
     no-repeat;
@@ -41,15 +44,13 @@
   }
 }
 
-.popup_slider_container {
-  flex: 1 1 100%;
-  align-self: center;
-  overflow: hidden;
-}
 .popup_slider_wrapper {
   display: flex;
   flex: 1 1 100%;
   align-self: center;
+  flex: 1 1 100%;
+  align-self: center;
+  overflow: hidden;
 }
 
 .bullets_wrapper {
@@ -59,11 +60,13 @@
     width: 18px;
     height: 31px;
     background: url('../../../public/assets/images/popup/btn_next.svg');
+    cursor: pointer;
   }
   .bullets_prev {
     width: 18px;
     height: 31px;
     background: url('../../../public/assets/images/popup/btn_1.svg');
+    cursor: pointer;
   }
   .bullets_pagination_wrapper {
     display: flex;
@@ -71,19 +74,20 @@
 
     .pagination_item {
       box-sizing: border-box;
-      height: 12px;
-      width: 12px;
+      height: 20px;
+      width: 20px;
       background: transparent;
       border-radius: 50%;
       border: 2px solid black;
+      cursor: pointer;
 
       &_active {
-        height: 12px;
-        width: 12px;
+        height: 20px;
+        width: 20px;
         border-radius: 50%;
         border: none;
         border-radius: 50%;
-
+        cursor: pointer;
         background: #fc6da9;
       }
     }

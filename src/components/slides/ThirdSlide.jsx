@@ -5,7 +5,7 @@ import styles from './slides.module.scss'
 
 const Thirdpage = () => {
   return (
-    <div className={styles.thirdslide_wrapper}>
+    <div className={`${styles.thirdslide_wrapper} container`}>
       <div className={styles.thirdslide_header}>
         <span className={styles.thirdslide_hello}>Ключевое сообщение</span>
         <span className={styles.thirdslide_title}>

@@ -1,9 +1,13 @@
 @import url('./lib/assets/fonts/din/style.css');
 @import url('./lib/assets/fonts/gilroy/style.css');
 
+html {
+  font-size: 54px;
+  line-height: 80px;
+  font-family: 'DIN pro';
+}
 body {
   margin: 0;
-  font-family: 'DIN pro';
   position: relative;
 }
 
@@ -11,21 +15,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+img,
+button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  background: transparent;
+  border: none;
+}
 
 .wrapper {
-  height: 100vh;
+  min-height: 100vh;
 }
 .container {
   max-width: 1800px;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-
-
 
 header,
 footer {
