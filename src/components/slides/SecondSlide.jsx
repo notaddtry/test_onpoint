@@ -4,11 +4,11 @@ import styles from './slides.module.scss'
 
 const Secondpage = () => {
   return (
-    <div className={`${styles.secondslide_wrapper} container`}>
+    <div className={`${styles.secondslide_wrapper} container_body`}>
       <span className={styles.secondslide_hello}>текст сообщения</span>
       <div className={styles.secondslide_body}>
         <span className={styles.secondslide_text}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
+          <b>Lorem ipsum dolor sit amet consectetur</b>, adipisicing elit. Amet
           temporibus iure eius, illum at magnam veniam dolorum voluptatum
           tempora quasi quidem dolores tempore laborum dolor quas assumenda illo
           corrupti dignissimos, nulla optio dolore? Ipsa expedita modi provident

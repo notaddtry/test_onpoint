@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   index: 0,
+  showPopup: false,
 }
 
 const popupSlice = createSlice({
@@ -20,9 +21,13 @@ const popupSlice = createSlice({
     goToSlide(state, action) {
       state.index = action.payload
     },
+    setShowPopup(state, action) {
+      state.showPopup = action.payload
+    },
   },
 })
 
-export const { incIndex, decIndex, goHomeSlide, goToSlide } = popupSlice.actions
+export const { incIndex, decIndex, goHomeSlide, goToSlide, setShowPopup } =
+  popupSlice.actions
 
 export default popupSlice.reducer

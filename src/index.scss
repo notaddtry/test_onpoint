@@ -28,7 +28,8 @@ button {
 .wrapper {
   min-height: 100vh;
 }
-.container {
+.container,
+.container_body {
   max-width: 1800px;
   width: 100%;
   min-height: 100vh;
@@ -36,6 +37,9 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.container_body {
+  min-height: 80vh;
 }
 
 header,

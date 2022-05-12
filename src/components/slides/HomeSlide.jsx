@@ -11,7 +11,7 @@ const Homepage = () => {
   }
 
   return (
-    <div className={`${styles.homeslide_wrapper} container`}>
+    <div className={`${styles.homeslide_wrapper} container_body`}>
       <span className={styles.homeslide_hello}>Привет,</span>
       <br />
       <span className={styles.homeslide_text}>
