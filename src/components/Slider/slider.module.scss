@@ -32,8 +32,8 @@
 
 .slider_children_item {
   opacity: 0;
-  min-width: 500px;
-  max-width: 500px;
+  min-width: 1220px;
+  max-width: 1220px;
   background: transparent;
   pointer-events: none;
 
@@ -41,6 +41,11 @@
     opacity: 1;
     transition: opacity 0.5s ease;
   }
+}
+.popup_slider_container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
 }
 
 .popup_slider_wrapper {
@@ -54,7 +59,11 @@
 
 .bullets_wrapper {
   display: flex;
+  width: max-content;
 
+  & > *:not(:last-child) {
+    margin-right: 43px;
+  }
   .bullets_next {
     width: 18px;
     height: 31px;
@@ -70,6 +79,10 @@
   .bullets_pagination_wrapper {
     display: flex;
     align-items: flex-end;
+
+    & > *:not(:last-child) {
+      margin-right: 20px;
+    }
 
     .pagination_item {
       box-sizing: border-box;

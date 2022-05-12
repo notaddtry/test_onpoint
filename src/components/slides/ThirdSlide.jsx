@@ -47,8 +47,8 @@ const Thirdpage = () => {
             />
           </button>
         </div>
-        {isPopupShown && <PopupSlider />}
       </div>
+      {isPopupShown && <PopupSlider />}
     </div>
   )
 }

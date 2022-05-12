@@ -20,15 +20,15 @@ const SLIDES = [
     content: [
       {
         spanId: '01',
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit',
+        text: 'Lorem, ipsum dolor sit amet',
       },
       {
         spanId: '02',
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit',
+        text: 'Lorem, ipsum dolor',
       },
       {
         spanId: '03',
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit',
+        text: 'Lorem, ipsum dolor sit amet conse',
       },
     ],
   },
@@ -38,15 +38,15 @@ const SLIDES = [
     content: [
       {
         spanId: '04',
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit',
+        text: 'Lorem, ipsum',
       },
       {
         spanId: '05',
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit',
+        text: 'Lorem, ipsum dolor sit amet consectt',
       },
       {
         spanId: '06',
-        text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit',
+        text: 'Lorem, ipsum dolor sit amet consectetur',
       },
     ],
   },
@@ -73,19 +73,19 @@ const PopupSlider = () => {
     <div className={styles.popup_wrapper}>
       <div className={`${styles.popup_body} container_body`}>
         <div className={styles.popup_body_wrapper}>
+          <button className={styles.popup_btn} onClick={handleShowPopup}>
+            <img
+              className={styles.styles_btn}
+              src={`${process.env.PUBLIC_URL}/assets/images/popup/btn_close.svg`}
+              alt=''
+            />
+          </button>
           <div className={styles.thirdslide_header}>
             <span className={styles.thirdslide_hello}>преимущества</span>
             <span className={styles.thirdslide_title}>
               BREND
               <span className={styles.thirdslide_title_bold}>XY </span>
             </span>
-            <button className={styles.popup_btn} onClick={handleShowPopup}>
-              <img
-                className={styles.styles_btn}
-                src={`${process.env.PUBLIC_URL}/assets/images/popup/btn_close.svg`}
-                alt=''
-              />
-            </button>
           </div>
           <div className={styles.thirdslide_content} ref={SliderRef}>
             <Slider
@@ -104,8 +104,12 @@ const PopupSlider = () => {
                   activeSlide={activeSlide + 1}>
                   {slide.content.map((item, index) => (
                     <div className={styles.thirdslide_content_item} key={index}>
-                      <span>{item.spanId}</span>
-                      <span>{item.text}</span>
+                      <span className={styles.popup_span_id}>
+                        {item.spanId}
+                      </span>
+                      <span className={styles.popup_span_text}>
+                        {item.text}
+                      </span>
                     </div>
                   ))}
                 </Slide>

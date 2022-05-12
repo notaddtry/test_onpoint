@@ -110,28 +110,57 @@
     }
   }
 }
-.thirdslide_content {
-  width: 500px;
-  display: flex;
-}
 
 .thirdslide_content_item {
   display: flex;
 }
 
 .popup_wrapper {
+  background-color: rgba($color: #16273e, $alpha: 0.7);
   position: absolute;
   z-index: 2;
-  background: #fff;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   .popup_body {
-    margin: 330px auto 0;
+    box-sizing: border-box;
+
+    background: #fff;
+    border-radius: 80px;
+    padding: 80px 0;
+
+    margin: 250px auto 0;
     align-items: center;
     .popup_body_wrapper {
-      margin-left: 358px;
+      position: relative;
+      margin-left: 558px;
+      display: flex;
+      flex: 1 1 100%;
+      flex-direction: column;
+      .thirdslide_content {
+        padding: 100px 0;
+        flex: 1 1 100%;
+        width: 1220px;
+        display: flex;
+
+        .thirdslide_content_item {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .popup_span_id {
+        font-family: 'Gilroy';
+        font-weight: bold;
+        color: #8cc9e8;
+      }
+    }
+    .popup_btn {
+      cursor: pointer;
+      position: absolute;
+      right: 80px;
+      top: -10px;
     }
   }
 }
