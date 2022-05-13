@@ -32,28 +32,31 @@
 
 .slider_children_item {
   opacity: 0;
+
+  visibility: hidden;
   min-width: 1220px;
   max-width: 1220px;
   background: transparent;
-  pointer-events: none;
 
   &_active {
+    padding: 100px 0;
+
+    min-width: 1220px;
+    max-width: 1220px;
     opacity: 1;
     transition: opacity 0.5s ease;
   }
 }
 .popup_slider_container {
-  display: flex;
+  overflow: hidden;
   flex-direction: column;
   flex: 1 1 100%;
 }
 
 .popup_slider_wrapper {
+  height: 90%;
   display: flex;
-  flex: 1 1 100%;
-  align-self: center;
-  flex: 1 1 100%;
-  align-self: center;
+  pointer-events: auto !important;
   overflow: hidden;
 }
 

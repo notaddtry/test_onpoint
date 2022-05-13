@@ -25,19 +25,16 @@ const Thirdpage = () => {
           </span>
         </div>
         <div className={styles.thirdslide_body}>
-          <div className={styles.thirdslide_item}>
-            <span
-              className={`${styles.thirdslide_body_text} ${styles.thirdslide_text_1}`}>
-              Ehicula ipsum a arcu cursus vitae. Eu non diam phasellus
-              vestibulum lorem sed risus ultricies
-            </span>
-          </div>
-          <div className={styles.thirdslide_item}>
-            <span
-              className={`${styles.thirdslide_body_text} ${styles.thirdslide_text_2}`}>
-              A arcu cursus vitae
-            </span>
-          </div>
+          <span
+            className={`${styles.thirdslide_body_text} ${styles.thirdslide_text_1}`}>
+            Ehicula ipsum a arcu cursus vitae. Eu non diam phasellus vestibulum
+            lorem
+          </span>
+
+          <span
+            className={`${styles.thirdslide_body_text} ${styles.thirdslide_text_2}`}>
+            A arcu cursus vitae
+          </span>
           <button className={styles.thirdslide_btn}>
             <img
               className={styles.styles_btn}
