@@ -11,12 +11,11 @@ export const useSlider = (childrenCount, storeState, { ...dispatchEvents }) => {
   const sliderLength = childrenCount - 1
 
   const touchStart = (event) => {
-    event.stopPropagation()
-    x1 = event.touches[0].clientX
+    endX = 0
+    if (checkSlider(event.target)) x1 = event.touches[0].clientX
   }
   const touchMove = (event) => {
-    event.stopPropagation()
-    x2 = event.touches[0].clientX
+    if (checkSlider(event.target)) x2 = event.touches[0].clientX
   }
   const touchEnd = () => {
     endX = x2 - x1
@@ -27,6 +26,10 @@ export const useSlider = (childrenCount, storeState, { ...dispatchEvents }) => {
         if (slideIndex > 0) dispatch(dispatchEvents.decIndex())
       }
     }
+  }
+
+  const checkSlider = (target) => {
+    if (target.className.substr(0, 6) === 'slider') return true
   }
 
   const goNextSlide = () => {
@@ -52,20 +55,39 @@ export const useSlider = (childrenCount, storeState, { ...dispatchEvents }) => {
 
 export const useWindowResize = (queryElem) => {
   const [width, setWidth] = useState(0)
+  const [elemWidth, setElemWidth] = useState(0)
+  let elem = null
 
   useLayoutEffect(() => {
-    if (queryElem) {
-      setWidth(document.querySelector(`.${queryElem}`).clientWidth)
-    } else {
-      setWidth(window.innerWidth)
-    }
-  }, [width])
+    setWidth(elemWidth)
+  }, [elemWidth])
 
   const resizeEvent = () => {
     window.addEventListener('resize', function resize() {
-      setWidth(width)
+      if (queryElem) {
+        console.log(document.querySelector(`.${queryElem}`).clientWidth)
+        elem = document.querySelector(`.${queryElem}`).clientWidth
+        // console.log(elem)
+      } else {
+        elem = window.innerWidth
+      }
+
+      setElemWidth(elem)
     })
   }
 
-  return { width, resizeEvent }
+  const initEvent = () => {
+    if (queryElem) {
+      console.log(document.querySelector(`.${queryElem}`).clientWidth)
+      // console.log(document.querySelector(`.${queryElem}`))
+      elem = document.querySelector(`.${queryElem}`).clientWidth
+      // console.log(elem)
+    } else {
+      elem = window.innerWidth
+    }
+
+    setElemWidth(elem)
+  }
+
+  return { width, resizeEvent, initEvent }
 }

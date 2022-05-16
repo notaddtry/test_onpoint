@@ -5,6 +5,19 @@ html {
   font-size: 54px;
   line-height: 80px;
   font-family: 'DIN pro';
+
+  @media (max-width: 2000px) {
+    font-size: 36px;
+    line-height: 50px;
+  }
+  @media (max-width: 1600px) {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  @media (max-width: 1200px) {
+    font-size: 20px;
+    line-height: 40px;
+  }
 }
 body {
   margin: 0;
@@ -39,7 +52,7 @@ button {
   align-items: flex-start;
 }
 .container_body {
-  min-height: 80vh;
+  min-height: 10vh;
 }
 
 header,

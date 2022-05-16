@@ -41,6 +41,7 @@
     direction: rtl;
 
     .secondslide_text {
+      line-height: 80px;
       border-radius: 80px;
       background: #fff;
       position: relative;
@@ -85,6 +86,17 @@
   margin: 330px auto 0;
   .thirdslide_wrapper_content {
     margin-left: 568px;
+
+    // @media (max-width: 2000px) {
+    //   margin-left: 408px;
+    // }
+
+    // @media (max-width: 1600px) {
+    //   margin-left: 208px;
+    // }
+    // @media (max-width: 1200px) {
+    //   font-size: 20px;
+    // }
   }
   .thirdslide_header {
     display: inline-flex;
@@ -107,8 +119,21 @@
     display: grid;
     grid-template-columns: 580px 540px;
     grid-template-rows: 300px 170px;
-
     gap: 80px;
+
+    @media (max-width: 2000px) {
+      grid-template-columns: 480px 440px;
+      grid-template-rows: 200px 120px;
+    }
+
+    @media (max-width: 1600px) {
+      grid-template-columns: 380px 340px;
+      grid-template-rows: 150px 70px;
+    }
+    // @media (max-width: 1200px) {
+    //   grid-template-columns: 580px 540px;
+    // grid-template-rows: 300px 170px;
+    // }
 
     .thirdslide_body_text {
       position: relative;
@@ -119,6 +144,14 @@
       padding: 100px;
       background: #fff;
       border-radius: 40px;
+
+      @media (max-width: 2000px) {
+        padding: 80px;
+      }
+
+      @media (max-width: 1600px) {
+        padding: 40px;
+      }
     }
     .thirdslide_text_1 {
       padding-left: 0;
@@ -181,6 +214,8 @@
   bottom: 0;
 
   .popup_body {
+    display: block;
+
     box-sizing: border-box;
     touch-action: none;
     background: #fff;
@@ -191,15 +226,33 @@
 
     .popup_body_wrapper {
       position: relative;
-      margin-left: 558px;
+
+      margin: 0 100px 0 568px;
       display: flex;
       flex: 1 1 100%;
       flex-direction: column;
 
+      // @media (max-width: 2000px) {
+      //   margin-left: 238px;
+      // }
+
+      // @media (max-width: 1600px) {
+      //   margin-left: 58px;
+      // }
+      // @media (max-width: 1400px) {
+      //   margin-left: 308px;
+      // }
+
+      .popup_body_header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
       .thirdslide_content {
         display: flex;
         flex: 1 1 100%;
-        width: 1220px;
+        width: max-content;
         position: relative;
         pointer-events: auto;
 
@@ -216,11 +269,7 @@
       }
     }
     .popup_btn {
-      cursor: pointer;
-      position: absolute;
-      right: 80px;
-      top: -10px;
-      pointer-events: auto;
+      align-self: start;
     }
   }
 }

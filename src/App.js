@@ -13,13 +13,11 @@ const SLIDES = [
 ]
 
 function App() {
-  const { width, resizeEvent } = useWindowResize()
+  const { width, resizeEvent, initEvent } = useWindowResize()
 
   useEffect(() => {
     resizeEvent()
-    return () => {
-      resizeEvent()
-    } // eslint-disable-next-line
+    initEvent()
   }, [])
 
   return (

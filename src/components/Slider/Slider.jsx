@@ -1,5 +1,4 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
 import { useSlider } from '../../hooks/sliderHook'
 
 import styles from './slider.module.scss'
@@ -28,24 +27,21 @@ const Slider = ({
     goIndexSlide,
   } = useSlider(childrenLength, storeState, { decIndex, incIndex, goToSlide })
 
-  const isPopupShown = useSelector((state) => state.popupSlider.showPopup)
-
-  const wrapperStyles = {
-    transform: `translateX(-${slideIndex * width}px)`,
-    width: `${childrenLength * width}px`,
-  }
-  if (isPopupShown) {
-    wrapperStyles.pointerEvents = 'none'
-  }
+  // useEffect(() => {
+  //   console.log(width)
+  // }, [width])
 
   return (
     <div className={styles[stylePrefix + 'slider_container']}>
       <div
         className={styles[stylePrefix + 'slider_wrapper']}
-        style={wrapperStyles}
-        onTouchStart={(e) => touchStart(e, { passive: false })}
+        onTouchStart={(e) => touchStart(e)}
         onTouchMove={(e) => touchMove(e)}
-        onTouchEnd={(e) => touchEnd(e)}>
+        onTouchEnd={() => touchEnd()}
+        style={{
+          transform: `translateX(-${slideIndex * width}px)`,
+          width: `${childrenLength * width}px`,
+        }}>
         {children}
       </div>
       {bullets ? (

@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 import Slide from '../../Slider/Slide'
 import Slider from '../../Slider/Slider'
 
@@ -54,40 +54,49 @@ const SLIDES = [
 
 const PopupSlider = () => {
   const dispatch = useDispatch()
+  const SlideRef = useRef(null)
+
   const activeSlide = useSelector((state) => state.popupSlider.index)
   const isPopupShown = useSelector((state) => state.popupSlider.showPopup)
-  const [sliderClassName, setSliderClassName] = useState('')
-  const { width } = useWindowResize(sliderClassName)
-
-  const SliderRef = useRef(null)
+  const [slideClassName, setSlideClassName] = useState('')
 
   const handleShowPopup = () => {
     dispatch(setShowPopup(false))
   }
 
   useLayoutEffect(() => {
-    setSliderClassName(SliderRef.current.className)
+    setSlideClassName(SlideRef.current.className)
   }, [])
+
+  useLayoutEffect(() => {
+    resizeEvent()
+    initEvent()
+  }, [slideClassName])
+
+  const { width, resizeEvent, initEvent } = useWindowResize(slideClassName)
 
   return (
     <div className={styles.popup_wrapper}>
       <div className={`${styles.popup_body} container_body`}>
         <div className={styles.popup_body_wrapper}>
-          <button className={styles.popup_btn} onClick={handleShowPopup}>
-            <img
-              className={styles.styles_btn}
-              src={`${process.env.PUBLIC_URL}/assets/images/popup/btn_close.svg`}
-              alt=''
-            />
-          </button>
-          <div className={styles.thirdslide_header}>
-            <span className={styles.thirdslide_hello}>преимущества</span>
-            <span className={styles.thirdslide_title}>
-              BREND
-              <span className={styles.thirdslide_title_bold}>XY </span>
-            </span>
+          <div className={styles.popup_body_header}>
+            <div className={styles.thirdslide_header}>
+              <span className={styles.thirdslide_hello}>преимущества</span>
+              <span className={styles.thirdslide_title}>
+                BREND
+                <span className={styles.thirdslide_title_bold}>XY </span>
+              </span>
+            </div>
+            <button className={styles.popup_btn} onClick={handleShowPopup}>
+              <img
+                className={styles.styles_btn}
+                src={`${process.env.PUBLIC_URL}/assets/images/popup/btn_close.svg`}
+                alt=''
+              />
+            </button>
           </div>
-          <div className={styles.thirdslide_content} ref={SliderRef}>
+
+          <div className={styles.thirdslide_content}>
             <Slider
               width={width}
               decIndex={decIndex}
@@ -101,7 +110,8 @@ const PopupSlider = () => {
                 <Slide
                   key={slide.id}
                   id={slide.id}
-                  activeSlide={activeSlide + 1}>
+                  activeSlide={activeSlide + 1}
+                  ref={SlideRef}>
                   {slide.content.map((item, index) => (
                     <div className={styles.thirdslide_content_item} key={index}>
                       <span className={styles.popup_span_id}>
