@@ -5,6 +5,59 @@ import styles from './slides.module.scss'
 const Secondpage = () => {
   return (
     <div className={`${styles.secondslide_wrapper} container_body`}>
+      <div className={styles.secondslide_background}>
+        <picture className={styles.secondslide_background_1}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_secondarypage/sperm1.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_secondarypage/sperm1.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.secondslide_background_2}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_secondarypage/sperm2.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_secondarypage/sperm2.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.secondslide_background_3}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_secondarypage/sperm3.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_secondarypage/sperm3.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.secondslide_background_4}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_secondarypage/sperm4.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_secondarypage/sperm4.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.secondslide_background_5}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_secondarypage/sperm5.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_secondarypage/sperm5.png`}
+            alt='описание'
+          />
+        </picture>
+      </div>
+
       <span className={styles.secondslide_hello}>текст сообщения</span>
       <div className={styles.secondslide_body}>
         <span className={styles.secondslide_text}>

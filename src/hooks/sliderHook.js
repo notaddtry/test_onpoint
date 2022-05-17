@@ -1,7 +1,12 @@
 import { useLayoutEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-export const useSlider = (childrenCount, storeState, { ...dispatchEvents }) => {
+export const useSlider = (
+  childrenCount,
+  storeState,
+  { ...dispatchEvents },
+  stylePrefix
+) => {
   const dispatch = useDispatch()
   const slideIndex = useSelector((state) => state[storeState].index)
 
@@ -11,15 +16,24 @@ export const useSlider = (childrenCount, storeState, { ...dispatchEvents }) => {
   const sliderLength = childrenCount - 1
 
   const touchStart = (event) => {
+    event.stopPropagation()
+
     endX = 0
-    if (checkSlider(event.target)) x1 = event.touches[0].clientX
+
+    if (checkSlider(event.target)) {
+      x1 = event.touches[0].clientX
+    }
   }
   const touchMove = (event) => {
-    if (checkSlider(event.target)) x2 = event.touches[0].clientX
+    event.stopPropagation()
+    if (checkSlider(event.target)) {
+      x2 = event.touches[0].clientX
+    }
   }
-  const touchEnd = () => {
+  const touchEnd = (event) => {
     endX = x2 - x1
-    if (x2) {
+
+    if (x2 && checkSlider(event.target)) {
       if (endX <= -100) {
         if (slideIndex < sliderLength) dispatch(dispatchEvents.incIndex())
       } else if (endX >= 100) {
@@ -29,7 +43,11 @@ export const useSlider = (childrenCount, storeState, { ...dispatchEvents }) => {
   }
 
   const checkSlider = (target) => {
-    if (target.className.substr(0, 6) === 'slider') return true
+    if (
+      target.className.substr(0, 7 + stylePrefix.length) ===
+      `slider_${stylePrefix}`
+    )
+      return true
   }
 
   const goNextSlide = () => {
@@ -67,7 +85,6 @@ export const useWindowResize = (queryElem) => {
       if (queryElem) {
         console.log(document.querySelector(`.${queryElem}`).clientWidth)
         elem = document.querySelector(`.${queryElem}`).clientWidth
-        // console.log(elem)
       } else {
         elem = window.innerWidth
       }
@@ -78,10 +95,7 @@ export const useWindowResize = (queryElem) => {
 
   const initEvent = () => {
     if (queryElem) {
-      console.log(document.querySelector(`.${queryElem}`).clientWidth)
-      // console.log(document.querySelector(`.${queryElem}`))
       elem = document.querySelector(`.${queryElem}`).clientWidth
-      // console.log(elem)
     } else {
       elem = window.innerWidth
     }

@@ -14,9 +14,9 @@ html {
     font-size: 28px;
     line-height: 40px;
   }
-  @media (max-width: 1200px) {
+  @media (orientation: landscape) and (max-width: 1200px) {
     font-size: 20px;
-    line-height: 40px;
+    line-height: 30px;
   }
 }
 body {
@@ -50,6 +50,22 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media (max-width: 2000px) {
+    max-width: 1400px;
+  }
+
+  @media (max-width: 1600px) {
+    max-width: 1000px;
+  }
+  @media (max-width: 1200px) {
+    max-width: 800px;
+  }
+  @media (max-width: 968px) {
+    max-width: 724px;
+  }
+  @media (orientation: landscape) and (max-width: 768px) {
+    max-width: 660px;
+  }
 }
 .container_body {
   min-height: 10vh;

@@ -16,6 +16,99 @@ const Thirdpage = () => {
 
   return (
     <div className={`${styles.thirdslide_wrapper} container_body`}>
+      <div className={styles.thirdslide_background}>
+        <picture className={styles.thirdslide_background_1}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_back/1.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_back/1.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.thirdslide_background_2}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_back/2.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_back/2.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.thirdslide_background_3}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_back/3.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_back/3.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.thirdslide_background_4}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_back/4.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_back/4.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.thirdslide_background_5}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_front/5.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_front/5.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.thirdslide_background_6}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_front/6.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_front/6.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.thirdslide_background_7}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_front/7.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_front/7.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.thirdslide_background_7}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_front/8.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bubbles_front/8.png`}
+            alt='описание'
+          />
+        </picture>
+        <picture className={styles.thirdslide_background_7}>
+          <source
+            srcSet={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bottle.webp`}
+            type='image/webp'
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/assets/images/bg_thirdpage/bottle.png`}
+            alt='описание'
+          />
+        </picture>
+      </div>
+
       <div className={styles.thirdslide_wrapper_content}>
         <div className={styles.thirdslide_header}>
           <span className={styles.thirdslide_hello}>Ключевое сообщение</span>
