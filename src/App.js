@@ -13,11 +13,12 @@ const SLIDES = [
 ]
 
 function App() {
-  const { width, resizeEvent, initEvent } = useWindowResize()
+  const { width, resizeEvent, initEvent, endResizeEvent } = useWindowResize()
 
   useEffect(() => {
     resizeEvent()
     initEvent()
+    return () => endResizeEvent()
   }, [])
 
   return (

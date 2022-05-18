@@ -71,20 +71,22 @@ const PopupSlider = () => {
   useLayoutEffect(() => {
     resizeEvent()
     initEvent()
+    return () => endResizeEvent()
   }, [slideClassName])
 
-  const { width, resizeEvent, initEvent } = useWindowResize(slideClassName)
+  const { width, resizeEvent, initEvent, endResizeEvent } =
+    useWindowResize(slideClassName)
 
   return (
     <div className={styles.popup_wrapper}>
       <div className={`${styles.popup_body} container_body`}>
         <div className={styles.popup_body_wrapper}>
           <div className={styles.popup_body_header}>
-            <div className={styles.thirdslide_header}>
-              <span className={styles.thirdslide_hello}>преимущества</span>
-              <span className={styles.thirdslide_title}>
+            <div className={styles.popup_header}>
+              <span className={styles.popup_hello}>преимущества</span>
+              <span className={styles.popup_title}>
                 BREND
-                <span className={styles.thirdslide_title_bold}>XY </span>
+                <span className={styles.popup_title_bold}>XY </span>
               </span>
             </div>
             <button className={styles.popup_btn} onClick={handleShowPopup}>
@@ -96,7 +98,7 @@ const PopupSlider = () => {
             </button>
           </div>
 
-          <div className={styles.thirdslide_content}>
+          <div className={styles.popup_content}>
             <Slider
               width={width}
               decIndex={decIndex}
@@ -113,7 +115,7 @@ const PopupSlider = () => {
                   activeSlide={activeSlide + 1}
                   ref={SlideRef}>
                   {slide.content.map((item, index) => (
-                    <div className={styles.thirdslide_content_item} key={index}>
+                    <div className={styles.popup_content_item} key={index}>
                       <span className={styles.popup_span_id}>
                         {item.spanId}
                       </span>

@@ -74,34 +74,33 @@ export const useSlider = (
 export const useWindowResize = (queryElem) => {
   const [width, setWidth] = useState(0)
   const [elemWidth, setElemWidth] = useState(0)
-  let elem = null
+  let e = null
 
   useLayoutEffect(() => {
     setWidth(elemWidth)
   }, [elemWidth])
 
   const resizeEvent = () => {
-    window.addEventListener('resize', function resize() {
-      if (queryElem) {
-        console.log(document.querySelector(`.${queryElem}`).clientWidth)
-        elem = document.querySelector(`.${queryElem}`).clientWidth
-      } else {
-        elem = window.innerWidth
-      }
+    window.addEventListener('resize', initEvent)
+  }
 
-      setElemWidth(elem)
-    })
+  const endResizeEvent = () => {
+    window.removeEventListener('resize', initEvent)
   }
 
   const initEvent = () => {
-    if (queryElem) {
-      elem = document.querySelector(`.${queryElem}`).clientWidth
-    } else {
-      elem = window.innerWidth
-    }
-
-    setElemWidth(elem)
+    const element = selectElement()
+    setElemWidth(element)
   }
 
-  return { width, resizeEvent, initEvent }
+  const selectElement = () => {
+    if (queryElem) {
+      e = document.querySelector(`.${queryElem}`).clientWidth
+    } else {
+      e = window.innerWidth
+    }
+    return e
+  }
+
+  return { width, resizeEvent, initEvent, endResizeEvent }
 }

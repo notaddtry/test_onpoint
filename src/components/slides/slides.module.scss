@@ -11,8 +11,51 @@
   }
 
   .homeslide_background {
-    position: absolute;
-    z-index: -1;
+    & > * {
+      position: absolute;
+      z-index: -1;
+    }
+
+    &_1 {
+      left: -260px;
+      top: -166px;
+    }
+    &_2 {
+      left: -90px;
+      top: 680px;
+    }
+    &_3 {
+      top: calc(100% + 115px);
+      left: -100px;
+    }
+    &_4 {
+      top: calc(100% + 170px);
+      left: 582px;
+    }
+    &_5 {
+      left: 720px;
+      top: 45px;
+      z-index: 0;
+      user-select: none;
+      touch-action: none;
+      pointer-events: none;
+    }
+    &_6 {
+      top: calc(100% + 170px);
+      left: 950px;
+    }
+    &_7 {
+      left: 1355px;
+      top: -100px;
+    }
+    &_8 {
+      top: 85px;
+      left: 1581px;
+    }
+    &_9 {
+      top: -150px;
+      left: 1720px;
+    }
   }
 
   .homeslide_text {
@@ -57,14 +100,30 @@
   }
 
   .secondslide_background {
-    top: 0;
-    transform: translateX(50%);
-
-    position: absolute;
-    z-index: -1;
-
     & > * {
+      z-index: -1;
       position: absolute;
+    }
+
+    &_1 {
+      top: -75px;
+      left: 600px;
+    }
+    &_2 {
+      top: -80px;
+      left: 1030px;
+    }
+    &_3 {
+      top: -130px;
+      left: 1280px;
+    }
+    &_4 {
+      top: 550px;
+      left: 1740px;
+    }
+    &_5 {
+      top: 760px;
+      left: 1790px;
     }
   }
 
@@ -167,11 +226,36 @@
   }
 
   .thirdslide_background {
-    position: absolute;
-    z-index: 1;
-
     & > * {
+      z-index: -1;
       position: absolute;
+    }
+    &_1 {
+    }
+    &_2 {
+    }
+    &_3 {
+    }
+    &_4 {
+    }
+    &_5 {
+      z-index: 3;
+      bottom: 1130px;
+      left: 370px;
+    }
+    &_6 {
+      z-index: 3;
+    }
+    &_7 {
+      z-index: 3;
+    }
+    &_8 {
+      z-index: 3;
+    }
+    &_9 {
+      top: -180px;
+      left: -40px;
+      z-index: 2;
     }
   }
 
@@ -275,7 +359,7 @@
         z-index: -1;
       }
       &:after {
-        content: url('../../../public/assets/images/bg_thirdpage/icon2.svg');
+        content: url('../../../public/assets/images/thirdslide_background/icon2.svg');
         position: absolute;
         top: -60px;
         left: 0;
@@ -288,7 +372,7 @@
       grid-row-end: 1;
 
       &:after {
-        content: url('../../../public/assets/images/bg_thirdpage/icon1.svg');
+        content: url('../../../public/assets/images/thirdslide_background/icon1.svg');
         position: absolute;
         top: -60px;
         left: 100px;
@@ -305,34 +389,42 @@
   }
 }
 
-.thirdslide_content_item {
+.popup_content_item {
   display: flex;
 }
 
 .popup_wrapper {
-  background-color: rgba($color: #16273e, $alpha: 0.7);
+  background-color: rgba(22, 39, 62, 0.7);
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  padding-top: 250px;
+  @media (max-width: 1200px) {
+    padding-top: 70px;
+  }
 
   .popup_body {
     display: block;
-
+    max-width: 1600px;
     box-sizing: border-box;
     touch-action: none;
     background: #fff;
     border-radius: 80px;
     padding: 80px 0;
-    margin: 250px auto 0;
+    // margin-top: 60px;
     align-items: center;
+
+    // @media (orientation: landscape) and (max-width: 1200px) {
+    //   margin-top: -40px;
+    // }
 
     .popup_body_wrapper {
       position: relative;
 
-      margin: 0 100px 0 568px;
+      margin: 0 100px 0 468px;
 
       @media (max-width: 2000px) {
         margin: 0 100px 0 408px;
@@ -370,7 +462,7 @@
         width: 100%;
       }
 
-      .thirdslide_content {
+      .popup_content {
         max-width: 100%;
         display: flex;
         flex: 1 1 100%;
@@ -378,7 +470,7 @@
         position: relative;
         pointer-events: auto;
 
-        .thirdslide_content_item {
+        .popup_content_item {
           display: flex;
           flex-direction: column;
         }
