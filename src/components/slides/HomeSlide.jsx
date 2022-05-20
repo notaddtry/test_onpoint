@@ -18,10 +18,8 @@ const Homepage = () => {
     <div className={`${styles.homeslide_wrapper} container_body`}>
       <SlideBackground images={images} slideName={slideName} />
       <span className={styles.homeslide_hello}>Привет,</span>
-      <br />
       <span className={styles.homeslide_text}>
-        это <span className={styles.homeslide_text_bold}> не</span> коммерческое
-        задание
+        это <span className='text_bold'> не</span> коммерческое задание
         <button className={styles.homeslide_btn} onClick={submitHandler}>
           <img
             className={styles.styles_btn}
