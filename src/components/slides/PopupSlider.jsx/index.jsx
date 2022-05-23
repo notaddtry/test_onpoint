@@ -86,7 +86,7 @@ const PopupSlider = () => {
               <span className={styles.popup_hello}>преимущества</span>
               <span className={styles.popup_title}>
                 BREND
-                <span className={styles.popup_title_bold}>XY </span>
+                <span className='text_bold'>XY</span>
               </span>
             </div>
             <button className={styles.popup_btn} onClick={handleShowPopup}>
