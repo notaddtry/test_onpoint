@@ -15,7 +15,9 @@ const Homepage = () => {
   }
 
   return (
-    <div className={`${styles.homeslide_wrapper} container_body`}>
+    <div
+      className={`${styles.homeslide_wrapper} container_body`}
+      id='homeSlide'>
       <SlideBackground images={images} slideName={slideName} />
       <span className={styles.homeslide_hello}>Привет,</span>
       <span className={styles.homeslide_text}>

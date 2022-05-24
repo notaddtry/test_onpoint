@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setShowPopup } from 'store/slices/popupSlice.js'
 import PopupSlider from './PopupSlider.jsx'
@@ -12,7 +12,6 @@ const slideName = 'thirdslide'
 const Thirdpage = () => {
   const dispatch = useDispatch()
   const isPopupShown = useSelector((state) => state.popupSlider.showPopup)
-  // const [isPopupShow, setPopupShow] = useState(false)
 
   const handleShowPopup = () => {
     dispatch(setShowPopup(true))
@@ -20,7 +19,9 @@ const Thirdpage = () => {
 
   return (
     <>
-      <div className={`${styles.thirdslide_wrapper} container_body`}>
+      <div
+        className={`${styles.thirdslide_wrapper} container_body`}
+        id='thirdSlide'>
         <SlideBackground images={images} slideName={slideName} />
         <div className={styles.thirdslide_wrapper_content}>
           <div className={styles.thirdslide_header}>

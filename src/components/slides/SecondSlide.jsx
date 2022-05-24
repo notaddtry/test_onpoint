@@ -1,4 +1,6 @@
-import React from 'react'
+import { useObserverSection } from 'hooks/useObserverSection'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import SlideBackground from './SlideBackground'
 
 import styles from './slides.module.scss'
@@ -7,9 +9,25 @@ const images = [1, 2, 3, 4, 5]
 const slideName = 'secondslide'
 
 const Secondpage = () => {
+  const sliderIndex = useSelector((state) => state.slider.index)
+  const [isSeen, setSeen] = useState(false)
+  const { endObserver, startObserve, seenSlide } = useObserverSection()
+
+  useLayoutEffect(() => {
+    startObserve()
+    return () => endObserver()
+  }, [sliderIndex])
+
+  useEffect(() => {
+    if (seenSlide !== 'homeSlide') setSeen(true)
+    else setSeen(false)
+  }, [seenSlide])
+
   return (
-    <div className={`${styles.secondslide_wrapper} container_body`}>
-      <SlideBackground images={images} slideName={slideName} />
+    <div
+      className={`${styles.secondslide_wrapper} container_body`}
+      id='secondSlide'>
+      <SlideBackground images={images} slideName={slideName} isSeen={isSeen} />
       <span className={styles.secondslide_hello}>текст сообщения</span>
       <div className={styles.secondslide_body}>
         <span className={styles.secondslide_text}>

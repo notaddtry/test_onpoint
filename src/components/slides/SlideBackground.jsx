@@ -2,12 +2,18 @@ import React from 'react'
 
 import styles from './slides.module.scss'
 
-const SlideBackground = ({ images, slideName }) => {
+const SlideBackground = ({ images, slideName, isSeen = true }) => {
+  if (!isSeen) {
+    return <></>
+  }
+
   return (
     <div className={styles[slideName + '_background']}>
       {images.map((image) => (
         <picture
-          className={styles[slideName + '_background_' + image]}
+          className={`${
+            styles[slideName + '_background_' + image]
+          } ${slideName}_background_image`}
           key={image}>
           <source
             srcSet={`${process.env.PUBLIC_URL}/assets/images/${

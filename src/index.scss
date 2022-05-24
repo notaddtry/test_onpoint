@@ -74,10 +74,15 @@ button {
 header,
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
   z-index: 2;
+  & > img {
+    @media (max-width: 1200px) {
+      max-width: 50%;
+    }
+  }
 }
 header {
   cursor: pointer;
