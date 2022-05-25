@@ -12,7 +12,10 @@ const Header = () => {
 
   return (
     <header onClick={goHome}>
-      <img src={`${process.env.PUBLIC_URL}/assets/images/header.svg`} alt='' />
+      <img
+        src={`${process.env.PUBLIC_URL}/assets/images/header.svg`}
+        alt='header'
+      />
     </header>
   )
 }

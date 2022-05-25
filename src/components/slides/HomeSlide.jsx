@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+
 import { incIndex } from 'store/slices/sliderSlice'
 import SlideBackground from './SlideBackground'
 

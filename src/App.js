@@ -1,10 +1,12 @@
-import { Children, useEffect, useLayoutEffect } from 'react'
+import { useEffect } from 'react'
+
+import { useWindowResize } from './hooks/sliderHook'
+import { decIndex, incIndex } from './store/slices/sliderSlice'
+
 import Footer from './components/layout/Footer'
 import Header from './components/layout/Header'
 import Slide from './components/Slider/Slide'
 import Slider from './components/Slider/Slider'
-import { useWindowResize } from './hooks/sliderHook'
-import { decIndex, incIndex } from './store/slices/sliderSlice'
 
 const SLIDES = [
   { id: 1, name: 'firstSlide' },

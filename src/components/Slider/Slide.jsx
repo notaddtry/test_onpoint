@@ -1,4 +1,5 @@
-import React, { forwardRef } from 'react'
+import React from 'react'
+
 import Homepage from 'components/slides/HomeSlide'
 import Secondpage from 'components/slides/SecondSlide'
 import Thirdpage from 'components/slides/ThirdSlide'

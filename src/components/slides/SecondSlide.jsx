@@ -1,6 +1,7 @@
 import { useObserverSection } from 'hooks/useObserverSection'
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+
 import SlideBackground from './SlideBackground'
 
 import styles from './slides.module.scss'

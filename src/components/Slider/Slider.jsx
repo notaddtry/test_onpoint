@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react'
 import { useSlider } from '../../hooks/sliderHook'
 
 import styles from './slider.module.scss'
@@ -15,7 +14,6 @@ const Slider = ({
   bullets,
   activeSlide,
 }) => {
-  const isPopupShow = useSelector((state) => state.popupSlider.showPopup)
   const childrenLength = children.length
   const childrenArray = Array(childrenLength).fill('')
 
@@ -34,16 +32,10 @@ const Slider = ({
     stylePrefix
   )
 
-  // useEffect(() => {
-  //   console.log(width)
-  // }, [width])
-
   const wrapperStyle = {
     transform: `translateX(-${slideIndex * width}px)`,
     width: `${childrenLength * width}px`,
   }
-
-  // if (isPopupShow) wrapperStyle.pointerEvents = 'none'
 
   return (
     <div className={styles[stylePrefix + 'slider_container']}>

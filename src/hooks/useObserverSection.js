@@ -15,7 +15,7 @@ export const useObserverSection = () => {
           }
       },
       {
-        rootMargin: '-50% 0px',
+        threshold: 1.0,
       }
     )
     startObserve = () => {

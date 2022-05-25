@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
+
 import Slide from '../../Slider/Slide'
 import Slider from '../../Slider/Slider'
 
@@ -57,7 +58,6 @@ const PopupSlider = () => {
   const SlideRef = useRef(null)
 
   const activeSlide = useSelector((state) => state.popupSlider.index)
-  const isPopupShown = useSelector((state) => state.popupSlider.showPopup)
   const [slideClassName, setSlideClassName] = useState('')
 
   const handleShowPopup = () => {
