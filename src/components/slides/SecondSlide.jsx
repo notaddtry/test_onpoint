@@ -17,6 +17,7 @@ const Secondpage = () => {
   useLayoutEffect(() => {
     startObserve()
     return () => endObserver()
+    // eslint-disable-next-line
   }, [sliderIndex])
 
   useEffect(() => {

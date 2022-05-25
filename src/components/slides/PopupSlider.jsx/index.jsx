@@ -72,6 +72,7 @@ const PopupSlider = () => {
     resizeEvent()
     initEvent()
     return () => endResizeEvent()
+    // eslint-disable-next-line
   }, [slideClassName])
 
   const { width, resizeEvent, initEvent, endResizeEvent } =

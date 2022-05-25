@@ -21,6 +21,7 @@ function App() {
     resizeEvent()
     initEvent()
     return () => endResizeEvent()
+    // eslint-disable-next-line
   }, [])
 
   return (
